@@ -11,12 +11,11 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 // cors origin
-app.use(
-  cors({
-    origin: ["https://loksun-ai-front-end.onrender.com","http://localhost:5173"]
-  })
-  // all origins are allowed
-);
+app.use(cors({
+  origin: ["https://loksun-ai-front-end.onrender.com", "http://localhost:5173"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json({ limit: "16kb" })); // json body
 app.use(express.urlencoded({ extended: true })); // to decode the url special character
