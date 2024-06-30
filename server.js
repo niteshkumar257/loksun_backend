@@ -13,7 +13,7 @@ const port = process.env.PORT || 8000;
 // cors origin
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: ["https://loksun-ai-front-end.onrender.com","http://localhost:5173"]
   })
   // all origins are allowed
 );
